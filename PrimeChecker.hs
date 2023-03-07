@@ -20,6 +20,5 @@ isDivisible n a
 
 deterministicTest :: Integer -> Bool
 deterministicTest a = foldr1 (||) (map f [2..root] )
-    where root =  a-1
-          --h div1 div2 = (isDivisible a div1 ) || (isDivisible a div2 )
+    where root  =  (round $ sqrt $ fromIntegral a) :: Integer
           f div1 = isDivisible a div1
