@@ -38,8 +38,8 @@ stopCondition a
 --start creating a chain: if 
 
 largestPrime :: [(Integer, Integer)] -> Integer
-largestPrime [(a, b)] = foldr1 f (map (fst) (concat $ fmap  (createChain) [(a,b)] ))
-                        where f num1 num2 = max num1 num2
+largestPrime l= maximum $ (map (fst) (concat $ fmap  (createChain) l ))
+                        --where f num1 num2 = max num1 num2
                             --L.maximumBy h [num1, num2] h num1 num2 = num1 
                      
 initialList :: [(Integer, Integer)] 
