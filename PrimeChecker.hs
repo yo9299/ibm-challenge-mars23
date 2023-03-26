@@ -9,6 +9,7 @@ modExp b e m = t * modExp ((b*b) `mod` m) (shiftR e 1) m `mod` m
 
 testFermat:: Integer -> Bool
 testFermat a 
+    | a == 0 = True
     | results == [1,1,1,1] = True
     | otherwise = False
     where results = [modExp j (a-1) a | j <- [2,3,5,7]]
